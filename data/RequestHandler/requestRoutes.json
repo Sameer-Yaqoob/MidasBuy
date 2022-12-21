@@ -1,0 +1,27 @@
+{
+  "signUp": {
+    "method": "POST",
+    "route": "/core/register/",
+    "isProtected": false
+  },
+  "login": {
+    "method": "POST",
+    "route": "/core/login/",
+    "isProtected": false
+  },
+  "getUser": {
+    "method": "GET",
+    "route": "/core/user/",
+    "isProtected": true
+  },
+  "getSocialUser": {
+    "method": "GET",
+    "route": "/core/socialUser/",
+    "isProtected": true
+  },
+  "logout": {
+    "method": "POST",
+    "route": "/core/logout/",
+    "isProtected": true
+  }
+}
