@@ -7,7 +7,9 @@ function Layout({ children }) {
     return (
             <Box w="100%">
                 <NavBar />
+                <Box mt="6rem" mb="2rem">
                 {children}
+                </Box>
                 <Footer />
             </Box>
             

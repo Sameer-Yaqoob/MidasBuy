@@ -8,7 +8,8 @@ import {
     MenuDivider,
     Button,
     useDisclosure,
-    Box
+    Box,
+    Text
   } from '@chakra-ui/react'
   import { ChevronDownIcon } from "@chakra-ui/icons";
   import Login from "../login";
@@ -17,7 +18,7 @@ import {
   import {getUserState } from '../../../data/redux/selecters';
   import { getSocialUser, getUserRequest, logOutRequest } from '../../../data/redux/actions';
   import useDispatchOnMount from '../hooks/useDispatchOnMount'
-  import {isEmpty} from 'lodash'
+  import {isEmpty} from 'lodash';
 
 
 const NavbarProfile = ()=> {
@@ -26,10 +27,11 @@ const NavbarProfile = ()=> {
     const dispatch = useDispatch();
     const {user} = useSelector(getUserState)
     const socialLogin = localStorage.getItem('social_login')
+    console.log("test user data", isEmpty(user));
     if(socialLogin == 'success') {
-        useDispatchOnMount(getSocialUser, isEmpty(user));
+        useDispatchOnMount(getSocialUser, isEmpty(user)?true:undefined);
     }else {
-        useDispatchOnMount(getUserRequest, isEmpty(user));
+        useDispatchOnMount(getUserRequest, isEmpty(user)?true:undefined);
     }
 
     // useEffect(()=> {
@@ -76,16 +78,16 @@ const NavbarProfile = ()=> {
         >
             {user.email?user.email:"My account"}
         </MenuButton>
-        <MenuList bg="base.2">
-            <MenuGroup title="My account" bg="base.2">
-                <MenuItem bg="base.2" ><Box textAlign="center" p="5px" w="100%" bg="base.4"  _hover="none" _focus={{bg:"base.3"}} onClick={handleClickSignIn}>Sign In</Box></MenuItem>
-                <MenuItem bg="base.2"><Box Box textAlign="center" p="5px" bg="white"  w="100%" color="base.4"  _hover={{bg:"base.4", color:"white"}} _focus={{bg:"base.3"}} onClick={handleClickSignUp}>Create Account</Box> </MenuItem>
+        <MenuList bg="base.2" borderColor="base.2">
+            <MenuGroup  bg="base.2">
+               { isEmpty(user) ? <><MenuItem bg="base.2" ><Box textAlign="center" p="5px" w="100%" bg="base.4"  _hover="none" _focus={{bg:"base.3"}} onClick={handleClickSignIn}>Sign In</Box></MenuItem>
+                <MenuItem bg="base.2"><Box Box textAlign="center" p="5px" bg="white"  w="100%" color="base.4"  _hover={{bg:"base.4", color:"white"}} _focus={{bg:"base.3"}} onClick={handleClickSignUp}>Create Account</Box> </MenuItem></>:
+                <MenuItem bg="base.2"><Text>My Account<br/>{user.email}</Text></MenuItem>
+                }
             </MenuGroup>
-            <MenuDivider />
-            <MenuGroup title="Help" bg="base.2">
+            <MenuGroup  bg="base.2">
                 <MenuItem bg="base.2">Docs</MenuItem>
-                <MenuDivider />
-                <MenuItem bg="base.2" onClick={onSignOut}>Sign out</MenuItem>
+               { !isEmpty(user) && <MenuItem bg="base.2" onClick={onSignOut}>Sign out</MenuItem>}
             </MenuGroup>
         </MenuList>
         

@@ -1,6 +1,6 @@
 import { Flex, Box, Heading, IconButton, Container,Text } from "@chakra-ui/react";
 import React from "react";
-import GameCard from "./ui/gamesCard";
+import ImageCard from "./ui/gamesCard";
 import { Grid, GridItem } from "@chakra-ui/react";
 
 const GameBlock = () => {
@@ -15,14 +15,14 @@ const GameBlock = () => {
                     
                 </Flex>
                 <Grid  gap={3} w="100%" templateColumns={{ lg:"repeat(4, 1fr)", md: "repeat(3, 1fr)", sm: "repeat(2, 1fr)" }} position="relative">
-                    <GridItem w="100%"><GameCard image="https://wallpaperaccess.com/full/825334.jpg"/></GridItem>
-                    <GridItem w="100%" ><GameCard image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf2M99osv60ur94dCGbZp6CtLK4rd__1Slot0wiLRnAw&s" /></GridItem>
-                    <GridItem w="100%"><GameCard image="https://wallpaperaccess.com/full/825334.jpg"/></GridItem>
-                    <GridItem w="100%" ><GameCard image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf2M99osv60ur94dCGbZp6CtLK4rd__1Slot0wiLRnAw&s" /></GridItem>
-                    <GridItem w="100%"><GameCard image="https://wallpaperaccess.com/full/825334.jpg"/></GridItem>
-                    <GridItem w="100%" ><GameCard image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf2M99osv60ur94dCGbZp6CtLK4rd__1Slot0wiLRnAw&s" /></GridItem>
-                    <GridItem w="100%"><GameCard image="https://wallpaperaccess.com/full/825334.jpg"/></GridItem>
-                    <GridItem w="100%" ><GameCard image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf2M99osv60ur94dCGbZp6CtLK4rd__1Slot0wiLRnAw&s" /></GridItem>
+                    <GridItem w="100%"><ImageCard image="https://wallpaperaccess.com/full/825334.jpg"linkText="Go"/></GridItem>
+                    <GridItem w="100%" ><ImageCard image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf2M99osv60ur94dCGbZp6CtLK4rd__1Slot0wiLRnAw&s" linkText="Go" /></GridItem>
+                    <GridItem w="100%"><ImageCard image="https://wallpaperaccess.com/full/825334.jpg"/></GridItem>
+                    <GridItem w="100%" ><ImageCard image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf2M99osv60ur94dCGbZp6CtLK4rd__1Slot0wiLRnAw&s" linkText="Go" /></GridItem>
+                    <GridItem w="100%"><ImageCard image="https://wallpaperaccess.com/full/825334.jpg"/></GridItem>
+                    <GridItem w="100%" ><ImageCard image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf2M99osv60ur94dCGbZp6CtLK4rd__1Slot0wiLRnAw&s" linkText="Go" /></GridItem>
+                    <GridItem w="100%"><ImageCard image="https://wallpaperaccess.com/full/825334.jpg"/></GridItem>
+                    <GridItem w="100%" ><ImageCard image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf2M99osv60ur94dCGbZp6CtLK4rd__1Slot0wiLRnAw&s" linkText="Go" /></GridItem>
                 </Grid>   
             </Container>
         </Box>

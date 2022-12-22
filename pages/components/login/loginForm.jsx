@@ -26,7 +26,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
-import { onLoginRequest } from "../../../data/redux/actions";
+import { onLoginRequest,getUserRequest } from "../../../data/redux/actions";
 
 const schema = Yup.object({
     email: Yup.string().email().required(),
@@ -59,6 +59,8 @@ export const LoginForm = () => {
     });
     const onSubmit = (values) => {
         dispatch(onLoginRequest(values, router));
+        debugger
+        dispatch(getUserRequest());
     };
     return (
         <Stack spacing="2" mt="1rem" mb="1rem">

@@ -5,7 +5,6 @@ const theme = extendTheme({
         Modal: {
           baseStyle: (props) => ({
             dialog: {
-            //   maxWidth: ["95%", "95%", "95%"],
               bg: "#16567d"
             }
           })

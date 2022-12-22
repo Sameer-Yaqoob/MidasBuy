@@ -8,7 +8,7 @@ const hasAllArgs = all(compose(not, isNil));
 /**
  * Calls fetch action creator if and only if all the argument is present.
  */
-export default (actionCreator = (...args) =>{},...args) => {
+export default (actionCreator,...args) => {
   const dispatch = useDispatch();
   useEffect(() => {
     if (hasAllArgs(args)) {
