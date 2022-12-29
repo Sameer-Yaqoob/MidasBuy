@@ -73,9 +73,7 @@ function Navbar() {
                         finalFocusRef={btnRef}
                     >
                         <VStack alignItems="left">
-                            <FeaturesDropDown />
-                            <IndustriesDropDown />
-                            <Link href="/pricing">
+                        <Link href="/">
                                 <Menu>
                                     <MenuButton
                                         as={Button}
@@ -89,7 +87,43 @@ function Navbar() {
                                         }}
                                         textAlign="start"
                                     >
-                                        Pricing
+                                        Home
+                                    </MenuButton>
+                                </Menu>
+                            </Link>
+                             <Link href="/latest-news">
+                                <Menu>
+                                    <MenuButton
+                                        as={Button}
+                                        variant="ghost"
+                                        fontSize="lg"
+                                        fontWeight="normal"
+                                        color="headerText"
+                                        _hover={{
+                                            bg: "gray.50",
+                                            color: "brand.blue",
+                                        }}
+                                        textAlign="start"
+                                    >
+                                        News
+                                    </MenuButton>
+                                </Menu>
+                            </Link>
+                            <Link href="/help-center">
+                                <Menu>
+                                    <MenuButton
+                                        as={Button}
+                                        variant="ghost"
+                                        fontSize="lg"
+                                        fontWeight="normal"
+                                        color="headerText"
+                                        _hover={{
+                                            bg: "gray.50",
+                                            color: "brand.blue",
+                                        }}
+                                        textAlign="start"
+                                    >
+                                        Help Center
                                     </MenuButton>
                                 </Menu>
                             </Link>
@@ -108,9 +142,25 @@ function Navbar() {
                     </Box>
                     <Box flex={2} alignItems="flex-start" ml="1rem">
                         <ButtonGroup display={{ lg: "yes", sm: "none" }}>
-                            <FeaturesDropDown />
-                            <IndustriesDropDown />
-                            <Link href="/pricing">
+                        <Link href="/">
+                                <Menu>
+                                    <MenuButton
+                                        as={Button}
+                                        variant="ghost"
+                                        fontSize="lg"
+                                        fontWeight="normal"
+                                        color="headerText"
+                                        _hover={{
+                                            bg: "gray.50",
+                                            color: "brand.blue",
+                                        }}
+                                        textAlign="start"
+                                    >
+                                        Home
+                                    </MenuButton>
+                                </Menu>
+                            </Link>
+                            <Link href="/latest-news">
                                 <Button
                                     variant="ghost"
                                     fontWeight="normal"
@@ -121,8 +171,26 @@ function Navbar() {
                                         color: "brand.blue",
                                     }}
                                 >
-                                    Pricing
+                                    News
                                 </Button>
+                            </Link>
+                            <Link href="/help-center">
+                                <Menu>
+                                    <MenuButton
+                                        as={Button}
+                                        variant="ghost"
+                                        fontSize="lg"
+                                        fontWeight="normal"
+                                        color="headerText"
+                                        _hover={{
+                                            bg: "gray.50",
+                                            color: "brand.blue",
+                                        }}
+                                        textAlign="start"
+                                    >
+                                        Help Center
+                                    </MenuButton>
+                                </Menu>
                             </Link>
                         </ButtonGroup>
                     </Box>

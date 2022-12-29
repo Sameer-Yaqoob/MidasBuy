@@ -43,21 +43,6 @@ const Carousel = ()=> {
               }
             },
             ".slick-arrow": {
-              backgroundColor: "cyan.500",
-              color: "#d1d1d1",
-              w: "30px",
-              h: "50px",
-              transition: "0.2s",
-              backgroundColor: "#0f4363",
-              _hover: {
-                backgroundColor: "#0f4363",
-                color: "#d1d1d1",
-                shadow: "dark"
-              },
-              _focus: {
-                backgroundColor: "#0f4363",
-                color: "white"
-              },
               _before: {
                 transition: "0.2s"
               }
@@ -65,15 +50,15 @@ const Carousel = ()=> {
             ".slick-prev": {
               left: "0px",
               zIndex:1,
-              _before: {
-                content: '"◀"'
-              }
+            //   _before: {
+            //     content: '"◀"'
+            //   }
             },
             ".slick-next": {
               right: "0px", 
-              _before: {
-                content: '"▶"'
-              }
+            //   _before: {
+            //     content: '"▶"'
+            //   }
             }
           }}
         >
@@ -81,7 +66,7 @@ const Carousel = ()=> {
             <Slide />
             <Slide/>
             <Slide />
-            <Slide  />
+            <Slide />
             <Slide />
           </Slider>
         </Box>

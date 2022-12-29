@@ -33,8 +33,8 @@ const theme = extendTheme({
     },
   },
   fonts: {
-    body: "MicrosoftPhagsPa, sans-serif",
-    heading: "MicrosoftPhagsPa-Bold, sans-serif",
+    heading: `'Open Sans', sans-serif`,
+    body: `'Raleway', sans-serif`,
   },
   fontSizes: {
     xs: "0.75rem",
