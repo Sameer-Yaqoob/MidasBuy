@@ -5,6 +5,7 @@ import {
     GET_USER,
     LOG_OUT_REQUEST,
     GET_SOCIAL_USER,
+    SOCIAL_LOGIN_REQUEST
 } from "../../constatants";
 
 //sign up request
@@ -19,6 +20,11 @@ export const onLoginRequest = (payload, router) => ({
     payload,
     router,
 });
+//google login request
+export const onSocialLoginRequest = (payload) => ({
+    type: SOCIAL_LOGIN_REQUEST,
+    payload,
+});
 
 // user request
 export const logOutRequest = (payload) => ({
@@ -27,9 +33,6 @@ export const logOutRequest = (payload) => ({
 });
 export const getUserRequest = () => ({
     type: GET_USER,
-});
-export const getSocialUser = () => ({
-    type: GET_SOCIAL_USER,
 });
 export const setUserAction = (payload) => ({
     type: SET_USER,

@@ -10,9 +10,9 @@ import {
     Flex,
     Box,
     Link,
-    Text,
-    Image
+    Text
 } from "@chakra-ui/react";
+import Image from "next/image";
 export default function DrawerComp({
     placement = "left",
     width,
@@ -39,7 +39,7 @@ export default function DrawerComp({
                         <Box w="auto" alignItems="center">
                             <Link href="/">
                                 <Image
-                                    src="../images/logo_primary.png"
+                                    src="/images/logo.png"
                                     width={166.6775}
                                     height={35.0798}
                                 />

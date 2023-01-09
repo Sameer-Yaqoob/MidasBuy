@@ -8,6 +8,9 @@ class AuthModel extends React.Component {
     static login = async (payload) => {
 		return await RequestHandler("login", payload);
 	};
+    static socialLogin = async (payload)=> {
+        return await RequestHandler("sociallogin",payload);
+    }
     static logout = async (payload) => {
         return await RequestHandler("logout",payload)
     }

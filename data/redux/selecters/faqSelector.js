@@ -1,0 +1,1 @@
+export const getQuestionState = (state) => state.question;

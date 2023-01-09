@@ -10,6 +10,7 @@ import {
 import { LoginForm } from './loginForm'
 
   const Login = ({isOpen,onClose})=> {
+    
     return(
         <>
         <Modal blockScrollOnMount={false} isOpen={isOpen} onClose={onClose}>
@@ -17,7 +18,7 @@ import { LoginForm } from './loginForm'
           <ModalContent>
             <ModalCloseButton />
             <ModalBody>
-              <LoginForm/>
+              <LoginForm closeForm={onClose}/>
             </ModalBody>
           </ModalContent>
         </Modal>

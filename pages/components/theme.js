@@ -5,7 +5,7 @@ const theme = extendTheme({
         Modal: {
           baseStyle: (props) => ({
             dialog: {
-              bg: "#16567d"
+              bg:"var(--bg-color-8,#1d2657)"
             }
           })
         }
@@ -14,11 +14,11 @@ const theme = extendTheme({
     transparent: "transparent",
     black: "#000",
     white: "#fff",
-    header: '#0f4363',
-    footer: '#0c2942',
+    header: '#141b3d',
+    footer: 'var(--bg-color-2,#111733);',
     headerText:'#d1d1d1',
     base: {
-        1:"#0f4363",
+        1:"#141b3d",
         2: "#16567d",
         3: "#1a71a7",
         4: "#0453c9"
@@ -29,7 +29,7 @@ const theme = extendTheme({
       900: "#171923",
     },
     brand: {
-      blue: "#407BFF",
+      blue: "#141b3d",
     },
   },
   fonts: {

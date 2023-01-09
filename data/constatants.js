@@ -4,3 +4,7 @@ export const SET_USER = 'SET_USER';
 export const GET_USER = 'GET_USER';
 export const GET_SOCIAL_USER = 'GET_SOCIAL_USER';
 export const LOG_OUT_REQUEST = 'LOG_OUT_REQUEST';
+export const SOCIAL_LOGIN_REQUEST = 'SOCIAL_LOGIN_REQUEST';
+
+//FAQ
+export const SET_QUESTION = "SET_QUESTION";

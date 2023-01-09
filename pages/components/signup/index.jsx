@@ -17,7 +17,7 @@ import { SignupForm } from './signupForm'
           <ModalContent>
             <ModalCloseButton />
             <ModalBody>
-              <SignupForm/>
+              <SignupForm closeForm={onClose}/>
             </ModalBody>
           </ModalContent>
         </Modal>

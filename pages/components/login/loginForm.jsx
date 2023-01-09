@@ -26,14 +26,14 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
-import { onLoginRequest,getUserRequest } from "../../../data/redux/actions";
+import { getUserRequest, onLoginRequest } from "../../../data/redux/actions";
 
 const schema = Yup.object({
     email: Yup.string().email().required(),
     password: Yup.string().min(4).required(),
 });
 
-export const LoginForm = () => {
+export const LoginForm = ({closeForm}) => {
     const router = useRouter();
     const dispatch = useDispatch();
     const { isOpen, onToggle } = useDisclosure();
@@ -58,10 +58,16 @@ export const LoginForm = () => {
         resolver: yupResolver(schema),
     });
     const onSubmit = (values) => {
-        dispatch(onLoginRequest(values, router));
-        debugger
-        dispatch(getUserRequest());
-    };
+        dispatch(onLoginRequest(values, router))
+        const promise =  new Promise(function(resolve, reject) {
+            setTimeout(function() {
+                const token = localStorage.getItem('token')
+                resolve(token)
+            }, 2000)});
+        promise.then((token) => {
+         token && closeForm();
+          }).catch(err=> console.log(err));
+    };     
     return (
         <Stack spacing="2" mt="1rem" mb="1rem">
             <Stack spacing="6">
@@ -213,7 +219,7 @@ export const LoginForm = () => {
                             </Text>
                             <Divider />
                         </HStack>
-                        <OAuthButtonGroup />
+                        <OAuthButtonGroup closeForm={closeForm} />
                     </Stack>
                 </Stack>
             </Box>

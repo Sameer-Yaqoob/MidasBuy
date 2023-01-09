@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import Link from "next/link";
+import Image from 'next/image'
 import {
     Box,
     Button,
@@ -9,27 +10,15 @@ import {
     Menu,
     VStack,
     useDisclosure,
-    Image,
     Container,
     IconButton,
     Text,
     Divider,
-    MenuList,
-    MenuItem,
-    MenuItemOption,
-    MenuGroup,
-    MenuOptionGroup,
-    MenuDivider,
 } from "@chakra-ui/react";
 import { Logo } from "../logo";
-import IndustriesDropDown from "./IndustriesDropDown";
-import FeaturesDropDown from "./FeaturesDropDown";
-import PrimaryButton from "../ui/SecondaryButton";
-import SecondaryButton from "../ui/SecondaryButton";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import DrawerComp from "./drawer";
 import { MdNotificationImportant } from "react-icons/md";
-import { ChevronDownIcon } from "@chakra-ui/icons";
 import NavbarProfile from "./navbarProfileBlock";
 function Navbar() {
     const { isOpen, onOpen, onClose } = useDisclosure();
@@ -132,12 +121,11 @@ function Navbar() {
 
                     <Box w="auto" alignItems="center" display="flex">
                         <Link href="/">
-                            {/* <Image
-                                src="../images/logo_primary.png"
+                            <Image
+                                src="/images/logo.png"
                                 width={166.6775}
                                 height={35.0798}
-                            /> */}
-                            <Logo />
+                            />
                         </Link>
                     </Box>
                     <Box flex={2} alignItems="flex-start" ml="1rem">

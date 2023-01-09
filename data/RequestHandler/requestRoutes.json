@@ -9,6 +9,12 @@
     "route": "/core/login/",
     "isProtected": false
   },
+  
+  "sociallogin": {
+    "method": "POST",
+    "route": "/auth/convert-token",
+    "isProtected": false
+  },
   "getUser": {
     "method": "GET",
     "route": "/core/user/",

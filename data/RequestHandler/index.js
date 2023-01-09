@@ -1,18 +1,17 @@
 import requestRoutes from "./requestRoutes.json";
 // import getInterceptors from "./getInterceptors";
-import axios from 'axios'
+import axios from "axios";
 
 // getInterceptors();
 
 const getToken = () => {
-    
 	const token = localStorage.getItem("token");
-    const s = localStorage.getItem("social_token");
+	const s = localStorage.getItem("social_token");
 	if (!token) {
 		return null;
 	}
 	// const tokens = JSON.parse(auth.tokens);
-	const isAuthenticated = token?true:false;
+	const isAuthenticated = token ? true : false;
 	return isAuthenticated ? token : null;
 };
 
@@ -46,20 +45,19 @@ const RequestHandler = (type, reqData, headers) => {
 		// 		console.error(err);
 		// 		reject(err);
 		// 	});
-        // });
-        
-        axios({
-            method: data.method,
-            url: url,
-            data:data.body,
-            headers:data.headers
-          }).then((apiRes) => {
-				resolve(apiRes.data);
-			})  
-			.catch((err) => {
-				console.error(err);
-				reject(err);
-			});
+		// });
+			axios({
+				method: data.method,
+				url: url,
+				data: data.body,
+				headers: data.headers,
+			}).then((apiRes) => {
+					resolve(apiRes.data);
+				})
+				.catch((err) => {
+					console.error(err);
+					reject(err);
+				});
 	});
 };
 
@@ -79,13 +77,22 @@ const setupRequest = (type, reqData, headers) => {
 	// }
 
 	if (routeConfig.isProtected) {
-		request.data.headers = {
-			...request.data.headers,
-			Authorization: getToken(),
-            // Social_token: getSocialToken(),
-			// "x-owner-id": getXOwnerId(),
-			...headers,
-		};
+		const social_login = localStorage.getItem("social_login");
+		if (social_login == "success") {
+			request.data.headers = {
+				...request.data.headers,
+				Authorization: 'social ' + getToken(),
+				// "x-owner-id": getXOwnerId(),
+				...headers,
+			};
+		} else {
+			request.data.headers = {
+				...request.data.headers,
+				Authorization: 'jwt ' + getToken(),
+				// "x-owner-id": getXOwnerId(),
+				...headers,
+			};
+		}
 	}
 
 	if (routeConfig.method === "GET" || routeConfig.method === "DELETE") {
@@ -98,10 +105,9 @@ const setupRequest = (type, reqData, headers) => {
 			request.data.body = reqData;
 		} else {
 			request.data.headers["Content-Type"] = "application/json";
-			request.data.body = 
-            JSON.stringify(
-                reqData && Object.keys(reqData).length ? reqData : {}
-                );
+			request.data.body = JSON.stringify(
+				reqData && Object.keys(reqData).length ? reqData : {}
+			);
 		}
 	}
 	return request;

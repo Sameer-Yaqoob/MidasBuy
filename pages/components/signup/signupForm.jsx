@@ -33,7 +33,7 @@ const schema = Yup.object({
     password: Yup.string().min(8).required(),
 });
 
-export const SignupForm = () => {
+export const SignupForm = ({closeForm}) => {
     const router = useRouter();
     const dispatch = useDispatch();
     const { isOpen, onToggle } = useDisclosure();
@@ -60,6 +60,7 @@ export const SignupForm = () => {
     const onSubmit = (values) => {
         values.name = values.username;
         dispatch(onSignupRequest(values, router));
+        closeForm();
     };
     return (
         <Stack spacing="2" mt="1rem" mb="1rem">
@@ -221,7 +222,7 @@ export const SignupForm = () => {
                             </Text>
                             <Divider />
                         </HStack>
-                        <OAuthButtonGroup />
+                        <OAuthButtonGroup closeForm={closeForm}/>
                     </Stack>
                 </Stack>
             </Box>

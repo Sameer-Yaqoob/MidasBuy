@@ -18,7 +18,7 @@ import { FaPaperPlane } from "react-icons/fa";
 
 const ContactBox = () => {
     return (
-        <Box pl="2rem" pr="2rem" pt="1rem" pb="1rem" bg="base.2" w={{lg:"50%", sm:"100%"}}>
+        <Box pl="2rem" pr="2rem" pt="1rem" pb="1rem" bg="var(--bg-color-8,#1d2657)"   w={{lg:"50%", sm:"100%"}}>
             <Flex direction="row" w="100%" gap={2}>
                 <Box w={{lg:"70%", sm:"100%"}}>
                     <Text fontSize="sm" color="headerText">

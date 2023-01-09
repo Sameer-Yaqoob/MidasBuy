@@ -14,7 +14,7 @@ const ImageCard = ({image,linkText})=> {
       width="100%" heigth="450px"
     /> 
   </CardBody>
-  <CardFooter display="flex" bg="base.2"  _hover={{ bg: "base.3", color: "brand.blue" }} justify="center" h="30px">
+  <CardFooter display="flex" bg="var(--bg-color-8,#1d2657)"  _hover={{ bg: "var(--bg-color-15,#324499)", color: "brand.blue" }} justify="center" h="30px">
       <Button variant='link' color='headerText'>
         {linkText}
       </Button>

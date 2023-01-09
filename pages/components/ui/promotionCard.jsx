@@ -15,7 +15,7 @@ const PromotionCard = ({image})=> {
     /> 
     <Text position="absolute" top={0} left={0} color="white" bg="base.4" p="5px">Ends in 12-01-2023</Text>
   </CardBody>
-  <CardFooter display="flex" flexDirection="column" bg="base.2"  _hover={{ bg: "base.3", color: "brand.blue" }} >
+  <CardFooter display="flex" flexDirection="column"  bg="var(--bg-color-8,#1d2657)"   _hover={{ bg: "var(--bg-color-15,#324499)", color: "brand.blue" }} >
      <Text noOfLines={1}  fontSize="sm" color="white" maxWidth="100%" >
       Register on Midasbuy to get a free PUBG MOBILE skin!     
       </Text>

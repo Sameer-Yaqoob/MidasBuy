@@ -1,9 +1,9 @@
 
 import { toast } from "react-toastify";
-import { all, takeLatest, put, call, select } from "redux-saga/effects";
-import { setUserAction } from "../actions";
+import { all, takeLatest, put, call } from "redux-saga/effects";
+import { setUserAction,getUserRequest } from "../actions";
 import { AuthModel } from "../../models";
-import {LOGIN_REQUEST, SIGNUP_REQUEST,GET_USER, LOG_OUT_REQUEST, GET_SOCIAL_USER} from '../../constatants'
+import {LOGIN_REQUEST, SIGNUP_REQUEST,GET_USER, LOG_OUT_REQUEST,SOCIAL_LOGIN_REQUEST} from '../../constatants'
 
 //
 //LOGIN SAGAS
@@ -18,18 +18,42 @@ function* watchLoginRequest({
 			payload
 		);
 		if (res.message !== "success") {
-			toast.error(res.message);
+			toast('Server side error, kindly check your internet', { hideProgressBar: true, autoClose: 1000, type: 'error', position:'top-center',className:"toast-message" })
 			return;
 		}
-		 toast.success(res.message);
-         JSON.stringify(localStorage.setItem("token", res.jwt));    
+		yield put(getUserRequest());    
+		toast('Login successfully', { hideProgressBar: true, autoClose: 1000, type: 'success', position:'top-center',className:"toast-message" })
+         JSON.stringify(localStorage.setItem("token", res.jwt));  
+		 yield put(getUserRequest());   
 	} catch (e) {
-		toast.error("Server side error occured. Kindly check your internet.");
+		toast('Server side error, kindly check your internet', { hideProgressBar: true, autoClose: 1000, type: 'error', position:'top-center',className:"toast-message" })
+	} finally {
+	}
+}
+//social login saga
+function* watchSocialLoginRequest({
+	payload,
+}) {
+	try { 
+		const res = yield call(
+			AuthModel.socialLogin,
+			payload
+		);
+		if (!res.access_token) {
+			toast('Server side error, kindly check your internet', { hideProgressBar: true, autoClose: 1000, type: 'error', position:'top-center',className:"toast-message" })
+			return;
+		}
+		localStorage.setItem('token', res.access_token)
+        localStorage.setItem('refresh_token', res.refresh_token)
+        localStorage.setItem('social_login', 'success') 
+		yield put(getUserRequest());    
+		toast('Login successfully', { hideProgressBar: true, autoClose: 1000, type: 'success', position:'top-center',className:"toast-message" })
+	} catch (e) {
+		toast('Server side error, kindly check your internet', { hideProgressBar: true, autoClose: 1000, type: 'error', position:'top-center',className:"toast-message" })
 	} finally {
 		// yield put(setAuthIsFormLoading(false));
 	}
 }
-
 //logout
 
 function* watchLogoutRequest({
@@ -45,15 +69,15 @@ function* watchLogoutRequest({
 			return;
 		}
         localStorage.clear()
-         yield put(setUserAction({}));
-         toast.success(res.message);
-           
+		toast('Logout successfully', { hideProgressBar: true, autoClose: 1000, type: 'success', position:'top-center',className:"toast-message" })
+         yield put(setUserAction({}));    
 	} catch (e) {
-		toast.error("Server side error occured. Kindly check your internet.");
+		toast('Server side error, kindly check your internet', { hideProgressBar: true, autoClose: 1000, type: 'error', position:'top-center',className:"toast-message" })
 	} finally {
 		// yield put(setAuthIsFormLoading(false));
 	}
 }
+
 //
 // SIGNUP SAGAS
 //
@@ -66,13 +90,14 @@ function* watchSignupRequest({
 			AuthModel.signUp,
 			payload
 		);
-		if (!res.status.success) {
-			toast.error(res.response.message);
+		if (res.message !=='success') {
+			toast('Server side error, kindly check your internet', { hideProgressBar: true, autoClose: 1000, type: 'error', position:'top-center',className:"toast-message" })
 			return;
 		}
 		router.push('/')
+		toast('Account created successfully. Login to continue.', { hideProgressBar: true, autoClose: 1000, type: 'success', position:'top-center',className:"toast-message" })
 	} catch (e) {
-		toast.error("Server side error occured. Kindly check your internet.");
+		toast('Server side error, kindly check your internet', { hideProgressBar: true, autoClose: 1000, type: 'error', position:'top-center',className:"toast-message" })
 	}
 }
 function* watchGetUserRequest(){
@@ -85,24 +110,8 @@ function* watchGetUserRequest(){
 			return;
 		}  
         yield put(setUserAction(res.data));
-        toast.success(res.message);
 	} catch (e) {
-		toast.error("Server side error occured. Kindly check your internet.");
-	}
-}
-function* watchGetSocialUserRequest(){
-    try {
-		const res = yield call(
-			AuthModel.getSocialUser
-		);
-		if (res.message !== 'success') {
-			toast.error(res.message);
-			return;
-		}  
-        yield put(setUserAction(res.data));
-        toast.success(res.message);
-	} catch (e) {
-		toast.error("Server side error occured. Kindly check your internet.");
+		toast('Server side error, kindly check your internet', { hideProgressBar: true, autoClose: 1000, type: 'error', position:'top-center',className:"toast-message" })
 	}
 }
 
@@ -111,8 +120,8 @@ export function* watchAuthSagas() {
 		// takeLatest(FIREBASE_LOGIN, watchFirebaseLogin),
 		takeLatest(SIGNUP_REQUEST, watchSignupRequest),
         takeLatest(LOGIN_REQUEST, watchLoginRequest),
+		takeLatest(SOCIAL_LOGIN_REQUEST, watchSocialLoginRequest),
         takeLatest(GET_USER, watchGetUserRequest),
-        takeLatest(LOG_OUT_REQUEST, watchLogoutRequest),
-        takeLatest(GET_SOCIAL_USER,watchGetSocialUserRequest)
+        takeLatest(LOG_OUT_REQUEST, watchLogoutRequest)
 	]);
 }

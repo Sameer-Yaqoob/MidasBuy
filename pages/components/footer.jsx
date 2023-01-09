@@ -11,7 +11,7 @@ import {
 } from "@chakra-ui/react";
 import * as React from "react";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
-import { Logo } from "./logo";
+import Image from "next/image";
 
 const Footer = () => {
     return (
@@ -24,7 +24,11 @@ const Footer = () => {
                 py={{ base: "12", md: "16" }}
             >
                 <Stack spacing={{ base: "6", md: "8" }} align="start">
-                    <Logo />
+                <Image
+                                    src="/images/logo.png"
+                                    width={166.6775}
+                                    height={35.0798}
+                                />
                     <Text color="headerText">
                         Create beautiful websites remarkably fast.
                     </Text>
