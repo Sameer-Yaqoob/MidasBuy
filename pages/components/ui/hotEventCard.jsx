@@ -1,7 +1,8 @@
-import { Flex, Box, Text, Button } from "@chakra-ui/react";
+import { Flex, Box, Text, Button, Heading } from "@chakra-ui/react";
 import React from "react";
 import { Image } from "@chakra-ui/react";
-const Slide = ({ image, text }) => {
+import { FaFacebook } from "react-icons/fa";
+const HotEventCard = ({ image, text, heading }) => {
 	return (
 		<Flex h="150px">
 			<Box w="50%">
@@ -15,16 +16,25 @@ const Slide = ({ image, text }) => {
 				bg="var(--bg-color-8,#1d2657)"
 				h="100%"
 			>
-				<Text color="headerText" mt="1rem" ml="1rem">
+				<Heading
+					as="h3"
+					size="sm"
+					color="headerText"
+					mt="1rem"
+					ml="1rem"
+				>
+					{heading}
+				</Heading>
+				<Text color="headerText" mt="1rem" ml="1rem" fontSize="14px">
 					{text}
 				</Text>
 				<Box display="flex" justifyContent="right" w="100%">
-					<Button colorScheme="blue" borderRadius="none" right="0">
-						JOIN NOW
+					<Button colorScheme="facebook" borderRadius="none" leftIcon={<FaFacebook />}>
+						Join our Facebook Group
 					</Button>
 				</Box>
 			</Box>
 		</Flex>
 	);
 };
-export default Slide;
+export default HotEventCard;

@@ -26,3 +26,31 @@ export const pubgQuestions = [
 		answer: "<div style='color: white;font-size:14px;'><p style='color:white;font-size:20px; font-weight:bold;margin-bottom:2%'>Q: How do I make purchases for PUBG MOBILE?</p> <div style='margin-bottom:2%'><p >1) Log in to the Midasbuy and select your country/region.</p></div><div style='margin-bottom:2%'> <p>2) Select PUBG MOBILE</p></div><div style='margin-bottom:2%'><p >3) Enter your Player ID.</p></div><div style='margin-bottom:2%'> <p>4) Select your payment method.</p></div><div style='margin-bottom:2%'> <p>5) Select the item you wish to purchase.</p></div><div style='margin-bottom:2%'> <p>6) Follow the instructions to complete the payment.</p></div><div><div style='margin-bottom:2%'><p>7) The items you purchased will be directly sent to your in-game account. Please return to the game to collect your items.</p><div style='display:flex;width:100%;justify-content:center;margin-top:2%;'><iframe width='500' height='300' src='https://www.youtube.com/embed/DWBpkr4bl_k?list=PLN-_G9hOUCJwUHTkOtmXiaxX34v0ERDIj' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='allowfullscreen'></iframe></div></div> </div></div>",
 	},
 ];
+
+export const pubgHotEvents = [
+	{
+		index: 0,
+		title: "GET WEEKLY PACK FOR ONLY $0.99 fet 75% OFF! ",
+		image: "/images/hot-event-1.png"
+	},
+	{
+		id: 1,
+		title: "Purchase Bonus",
+		image: "/images/hot-event-2.png"
+	}
+]
+export const pubgLatest = {
+	image: "/images/pubg-latest.jpg",
+	heading: "Midasbuy X PUBG Mobile",
+	text: "Join our Facebook Group to get the latest news and updates. Click Join Group on the Facebook Page!"
+}
+export const chimeralandLatest = {
+	image: "/images/chimeraland-latest.jpg",
+	heading: "Midasbuy X Chimeraland",
+	text: "Join our Facebook Group to get the latest news and updates. Click Join Group on the Facebook Page!"
+}
+export const arenaLatest = {
+	image: "/images/arena-latest.jpg",
+	heading: "Midasbuy X Arena of Valor",
+	text: "Join our Facebook Group to get the latest news and updates. Click Join Group on the Facebook Page!"
+}

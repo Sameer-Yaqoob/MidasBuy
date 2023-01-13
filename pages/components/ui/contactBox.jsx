@@ -47,7 +47,7 @@ const ContactBox = () => {
                                 h="38px"
                             />
                         </InputGroup>
-                        <Button colorScheme="blue" borderRadius="none">
+                        <Button color="white" bg="var(--btn-color-2,#3a7bfc)" borderRadius="none">
                             Submit
                         </Button>
                     </Stack>

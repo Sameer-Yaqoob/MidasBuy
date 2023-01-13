@@ -17,17 +17,17 @@ import Layout from "./components/layout";
 import HotEventCarousel from "./components/hotEventCarosel";
 // import Image from "next/image";
 // import PubgBg from '../public/image/pubg-bg.png'
-import {pubgHotEvents,pubgLatest} from './components/helpCenter/utils/constants';
+import {pubgHotEvents, arenaLatest} from './components/helpCenter/utils/constants';
 import HotEventCard from "./components/ui/hotEventCard"
 
-export default function PubgDetail() {
+export default function ArenaDetail() {
 	return (
 		<Flex h="100vh">
 			<Layout>
 				<Flex
 					// background="var(--bg-color-3,#141b3d)"
 					h="200px"
-					bgImage="url(/images/pubg-bg.png)"
+					bgImage="url(/images/arena-banner.jpg)"
 					opacity={2}
 				>
 					<Flex
@@ -47,12 +47,6 @@ export default function PubgDetail() {
 								h="200px"
 								marginBottom="32px"
 							>
-								<Image
-									src="/images/pubg-mobile.png"
-									width={34}
-									height={34}
-									marginBottom="12px"
-								/>
 								<Text
 									fontSize="32px"
 									color="white"
@@ -61,7 +55,7 @@ export default function PubgDetail() {
 									marginBottom="24px"
 									fontWeight="bold"
 								>
-									PUBG MOBILE
+									Arena of Valor
 								</Text>
 								<Link
 									href="https://www.pubgmobile.com/"
@@ -86,14 +80,27 @@ export default function PubgDetail() {
 										target="_blank"
 										fontFamily="dinm"
 									>
-										<Image
-											src="/images/game-download.png"
+                                        <Box 
+                                        display="flex"
+                                        flexDirection="column"
+                                        justifyContent="center"
+                                        /* width: 164px; */
+                                        alignItems= "center"
+                                        >
+                                        <Image
+											src="/images/arena-download.png"
 											width="58px"
 											height="58px"
-											position="absolute"
 											marginTop="0"
 										/>
+                                        <Box>
+                                        <Text  color="white">Download Game</Text>
+                                        </Box>
+                                       
+                                        </Box>	
+                                        
 									</Link>
+                                    
 								</Box>
 							</Box>
 						</Container>
@@ -103,13 +110,13 @@ export default function PubgDetail() {
 				</Flex>
 				<Container maxW="container.xl">
 					<Box margin={0} minH="calc(100vh - 458px)"  w="100%">
+					<Box bg="url(/images/bg-shades.png)"  margin="24px 0 44px" >
 						<Grid
 							margin="24px auto 44px"
 							color="transparent"
-							templateColumns="repeat(4, 1fr)"
+							templateColumns="repeat(2, 1fr)"
 							alignItems="center"
 							gap={6}
-							bg="url(/images/bg-shades.png)"
 							bgPosition="center"
 							bgRepeat="no-repeat"
                             padding="24px 0 24px 0"
@@ -121,7 +128,6 @@ export default function PubgDetail() {
 								w="100%"
 								h="70px"
                                 backgroundImage="linear-gradient(-89deg,#a8762a 12%,#e3a83d 68%)"
-								
 								bgPosition="cover"
 								bgRepeat="no-repeat"
 							>
@@ -149,7 +155,7 @@ export default function PubgDetail() {
 										Purchase
 									</Text>{" "}
 									<Image
-										src="/images/purchase.png"
+										src="/images/arena-purchase.png"
 										width="70px"
 										height="70px"
 										mt="-25px"
@@ -187,108 +193,27 @@ export default function PubgDetail() {
                                         pl= "24px"
 									>
 										{" "}
-										Redeem
-									</Text>{" "}
-									<Image
-										src="/images/redeam.png"
-										width="70px"
-										height="70px"
-										mt="-25px"
-									/>
-								</Box>
-							</GridItem>
-                            <GridItem
-								border="2px solid #48a3b6"
-								backgroundSize="cover"
-								boxSizing="border-box"
-								w="100%"
-								h="70px"
-                                backgroundImage="linear-gradient(90deg,#438fb5 23%,#295881)"
-								
-								bgPosition="cover"
-								bgRepeat="no-repeat"
-							>
-								<Box
-									display="flex"
-									justifyContent="space-between"
-									alignItems="center"
-									width="100%"
-									height="100%"
-									bg="url(/images/paint-block.png)"
-                                    border="none"
-                                    outline="none"
-								>
-									{" "}
-									<Text
-										fontSize="16px"
-										fontWeight="bold"
-                                        color= "#fff"
-                                        letterSpacing= "1px"
-                                        lineHeight="70px"
-                                        textShadow="0 2px 1px rgb(0 0 0 / 20%)"
-                                        pl= "24px"
-									>
-										{" "}
-										Shop
-									</Text>{" "}
-									<Image
-										src="/images/shop.png"
-										width="70px"
-										height="70px"
-										mt="-25px"
-									/>
-								</Box>
-							</GridItem>
-                            <GridItem
-								border="2px solid #4cafc0"
-								backgroundSize="cover"
-								boxSizing="border-box"
-								w="100%"
-								h="70px"
-                                backgroundImage="linear-gradient(-89deg,#134e6c 12%,#4782a0 68%)"
-								
-								bgPosition="cover"
-								bgRepeat="no-repeat"
-							>
-								<Box
-									display="flex"
-									justifyContent="space-between"
-									alignItems="center"
-									width="100%"
-									height="100%"
-									bg="url(/images/paint-block.png)"
-                                    border="none"
-                                    outline="none"
-								>
-									{" "}
-									<Text
-										fontSize="16px"
-										fontWeight="bold"
-                                        color= "#fff"
-                                        letterSpacing= "1px"
-                                        lineHeight="70px"
-                                        textShadow="0 2px 1px rgb(0 0 0 / 20%)"
-                                        pl= "24px"
-									>
-										{" "}
 										Promotions
 									</Text>{" "}
 									<Image
-										src="/images/promotion.png"
+										src="/images/arena-permotion.png"
 										width="70px"
 										height="70px"
 										mt="-25px"
 									/>
 								</Box>
 							</GridItem>
+                           
+                           
 						</Grid>
+						</Box>
                     <Box mb="84px">
                     <Heading as ="h3" size='sm'  color="headerText" mb="16px">Hot Event</Heading>
                     <HotEventCarousel data={pubgHotEvents}/>
                     </Box>
                     <Box mb="84px">
                     <Heading as='h3' size='sm' color="headerText" mb="16px">The latest news and updates</Heading>
-                    <HotEventCard image={pubgLatest.image}  text={pubgLatest.text} heading={pubgLatest.heading}/>
+                    <HotEventCard image={arenaLatest.image}  text={arenaLatest.text} heading={arenaLatest.heading}/>
                     </Box>
                        
                         {/* <HotEventCarousel/> */}
