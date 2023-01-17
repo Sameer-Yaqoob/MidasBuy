@@ -14,6 +14,8 @@ import {
 	Input,
 	Button,
 	Tooltip,
+	Grid,
+	GridItem,
 } from "@chakra-ui/react";
 import { MdHelpOutline } from "react-icons/md";
 import { AiFillLike } from "react-icons/ai";
@@ -405,25 +407,95 @@ export default function BubgBuy() {
 					</Heading>
 					<Flex
 						h="38px"
-                        gap="16px"
-                        lineHeight="38px"
+						gap="16px"
+						lineHeight="38px"
 						backgroundImage="linear-gradient(180deg,rgba(201,140,101,.15),rgba(176,103,69,.15))"
 						font-size="12px"
 						color="#f3b583"
 						letterSpacing="0"
 						overflow="hidden"
-                        alignItems="center"
+						alignItems="center"
+						mb="20px"
 					>
-                        <Image src="images/vip-icon.png" w="47px" ml="16px"  h="19px"/>
-                        <Text>You can become VIP immediatly after finishing this payment.</Text>
-                        <Text textDecoration="underline">Win VIP Lucky Draw Prizes</Text>
-                    </Flex>
-                    {/* <Grid  gap={3} w="100%" templateColumns={{ lg:"repeat(4, 1fr)", md: "repeat(3, 1fr)", sm: "repeat(2, 1fr)" }} position="relative">
-                    <GridItem w="100%"><ImageCard image="/images/popular-pubg.png"linkText="Go"/></GridItem>
-                    <GridItem w="100%"><ImageCard image="/images/popular-arena.jpg"linkText="Go"/></GridItem>
-                    <GridItem w="100%"><ImageCard image="/images/popular-chimeraland.jpg"linkText="Go"/></GridItem>
-                </Grid>   */}
-
+						<Image
+							src="images/vip-icon.png"
+							w="47px"
+							ml="16px"
+							h="19px"
+						/>
+						<Text>
+							You can become VIP immediatly after finishing this
+							payment.
+						</Text>
+						<Text textDecoration="underline">
+							Win VIP Lucky Draw Prizes
+						</Text>
+					</Flex>
+					<Grid
+						gap={3}
+						w="100%"
+						templateColumns={{
+							lg: "repeat(4, 1fr)",
+							md: "repeat(3, 1fr)",
+							sm: "repeat(2, 1fr)",
+						}}
+						position="relative"
+					>
+						<GridItem w="100%">
+							<Flex
+								direction="column"
+								position="relative"
+								p="44px 16px 14px"
+								h="326px"
+								boxSizing="border-box"
+								bg="var(--bg-color-6,#19214b)"
+							>
+								<Image
+									position="absolute"
+									left={0}
+									top={0}
+									src="/images/corner-tick.svg"
+								/>
+								<Flex
+									h="24px"
+									justifyContent="center"
+									alignItems="center"
+								>
+									<Image
+										src="/images/uc-icon.png"
+										w="24px"
+										h="24px"
+									/>
+									<Text
+										fontSize="24px"
+										color="#fff"
+										display="inline-block"
+										position="relative"
+										pl="5px"
+										fontWeight="bold"
+									>
+										7
+									</Text>
+								</Flex>
+								<Flex
+									p="16px"
+									h="200px"
+                                    w="100%"
+                                    alignItems="center"
+                                    justifyContent="center"
+								>
+									<Image
+										position="absolute"
+										src="/images/uc-main.png"
+										w="70%"
+                                        maxW="100%"
+									/>
+								</Flex>
+							</Flex>
+						</GridItem>
+						<GridItem w="100%"></GridItem>
+						<GridItem w="100%"></GridItem>
+					</Grid>
 				</Container>
 			</Box>
 		</Layout>
