@@ -125,6 +125,7 @@ export default function PubgDetail() {
 								bgPosition="cover"
 								bgRepeat="no-repeat"
 							>
+								<Link href="/pubg-buy">
 								<Box
 									display="flex"
 									justifyContent="space-between"
@@ -155,6 +156,7 @@ export default function PubgDetail() {
 										mt="-25px"
 									/>
 								</Box>
+								</Link>
 							</GridItem>
                             <GridItem
 								border="2px solid #fc5761"

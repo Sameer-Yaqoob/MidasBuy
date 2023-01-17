@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import React,{useState,useRef, useEffect} from "react";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
-import HotEventCarousel from "./hotEventCarosel";
+// import HotEventCarousel from "./hotEventCarosel";
 import {midasbuyQuestions, pubgQuestions} from "./utils/constants"
 import { useSelector,useDispatch } from "react-redux";
 import { getQuestionState } from "../../../data/redux/selecters";

@@ -17,6 +17,9 @@ const theme = extendTheme({
     header: '#141b3d',
     footer: 'var(--bg-color-2,#111733);',
     headerText:'#d1d1d1',
+    text: {
+      gray: 'var(--font-color-5,hsla(0,0%,100%,.4))'
+    },
     base: {
         1:"#141b3d",
         2: "#16567d",

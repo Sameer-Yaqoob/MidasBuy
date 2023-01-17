@@ -11,6 +11,7 @@ import {
 	Box,
 	Link,
 	Image,
+	Flex
 } from "@chakra-ui/react";
 import * as React from "react";
 import { MdMail } from "react-icons/md";
@@ -242,40 +243,14 @@ const Footer = () => {
 					
 				</Box>
 			</Box>{" "}
-			<Box>
-				<ul>
-					<li>
-						<Link>Cookies Preference</Link>
-					</li>
-					<li>
-						<Link href="https://www.midasbuy.com/oversea_web/static/terms.html"
-						target="_blank"
-					>
-						Terms of Service
-                        </Link>
-					</li>{" "}
-					<li>
-						<Link
-							href="https://www.midasbuy.com/oversea_web/static/privacy.html"
-							target="_blank"
-						>
-							Privacy Policy
-						</Link>
-					</li>{" "}
-					<li>
-						<Link
-							href="https://cdn.midasbuy.com/oversea_web/static/cookie.html"
-							target="_blank"
-						>
-							Cookie Policy
-						</Link>
-					</li>
-				</ul>{" "}
-				<Text>
-					COPYRIGHT © HIGH MORALE DEVELOPMENTS LTD. ALL RIGHTS
-					RESERVED.
-				</Text>
-			</Box>
+			<Flex gap="10px" alignItems="center">
+					
+						<Link ><Text color="var(--font-color-5,hsla(0,0%,100%,.4))" fontSize="12px" lineHeight="1" borderRight="1px solid var(--font-color-5,hsla(0,0%,100%,.4))"  pr="10px">Cookies Preference</Text></Link>
+						<Link ><Text color="var(--font-color-5,hsla(0,0%,100%,.4))" fontSize="12px" lineHeight="1" borderRight="1px solid var(--font-color-5,hsla(0,0%,100%,.4))"  pr="10px">Terms of Service</Text></Link>
+						<Link ><Text color="var(--font-color-5,hsla(0,0%,100%,.4))" fontSize="12px" lineHeight="1" borderRight="1px solid var(--font-color-5,hsla(0,0%,100%,.4))"  pr="10px">Privacy Policy</Text></Link>
+						<Link ><Text color="var(--font-color-5,hsla(0,0%,100%,.4))" fontSize="12px" lineHeight="1" borderRight="1px solid var(--font-color-5,hsla(0,0%,100%,.4))"  pr="10px">Cookie Policy</Text></Link>
+						<Text fontSize="12px" color="var(--font-color-5,hsla(0,0%,100%,.4))" lineHeight="24px">COPYRIGHT © HIGH MORALE DEVELOPMENTS LTD. ALL RIGHTSRESERVED.</Text>
+			</Flex>
             </Container>
 		</Box>
 	);

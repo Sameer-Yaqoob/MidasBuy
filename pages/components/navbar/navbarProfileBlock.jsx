@@ -61,21 +61,20 @@ const NavbarProfile = ()=> {
     }
     return(
         <Box>
-        <Menu>
+        <Menu borderColor="none" border="none">
         <MenuButton
             as={Button}
             transition="all 0.2s"
-            borderRadius="md"
             bg="none"
             _hover={{bg:"var(--bg-color-8,#1d2657)"  }}
             _expanded={{ bg:"var(--bg-color-8,#1d2657)"}}
-            _focus={{ boxShadow: "outline" }}
+            _focus={{ bg:"none"}}
             rightIcon={<ChevronDownIcon />}
         >
             {user.email?user.email:"My account"}
         </MenuButton>
-        <MenuList bg="var(--bg-color-8,#1d2657)" >
-            <MenuGroup  bg="base.2">
+        <MenuList bg="var(--bg-color-8,#1d2657)" borderColor="var(--bg-color-8,#1d2657)" borderRadius="none" >
+            <MenuGroup  bg="base.2" border="none" borderColor="none">
                { isEmpty(user) ? <><MenuItem bg="var(--bg-color-8,#1d2657)" ><Box textAlign="center" p="5px" w="100%" bg="base.4"  _hover="none" _focus={{bg:"base.3"}} onClick={handleClickSignIn}>Sign In</Box></MenuItem>
                 <MenuItem bg="var(--bg-color-8,#1d2657)" ><Box Box textAlign="center" p="5px" bg="white"  w="100%" color="base.4"  _hover={{bg:"base.4", color:"white"}} _focus={{bg:"base.3"}} onClick={handleClickSignUp}>Create Account</Box> </MenuItem></>:
                 <MenuItem bg="var(--bg-color-8,#1d2657)"><Text>My Account<br/>{user.email}</Text></MenuItem>

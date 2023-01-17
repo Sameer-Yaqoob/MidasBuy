@@ -20,11 +20,13 @@ export default function Home() {
     </Head>
         <Flex h="100vh">
           <Layout>
+            <Box>
             <Carousel/>
             <GameBlock/>
             <ContactBlock/>
             <NewsFilterBlock/>
             <PromotionBlock/>
+            </Box>
           </Layout>
         </Flex>
   </Box>

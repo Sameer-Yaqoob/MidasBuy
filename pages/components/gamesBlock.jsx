@@ -20,6 +20,7 @@ const GameBlock = () => {
                     <Link href="/arena-of-valor-detail"><GridItem w="100%"><ImageCard image="/images/popular-arena.jpg"linkText="Go"/></GridItem></Link>
                     <Link href="/chimeraland-detail"><GridItem w="100%"><ImageCard image="/images/popular-chimeraland.jpg"linkText="Go"/></GridItem></Link>
                 </Grid>   
+                
             </Container>
         </Box>
     );

@@ -15,7 +15,6 @@ import {
     Text,
     Divider,
 } from "@chakra-ui/react";
-import { Logo } from "../logo";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import DrawerComp from "./drawer";
 import { MdNotificationImportant } from "react-icons/md";
@@ -29,7 +28,6 @@ function Navbar() {
             pb="1rem"
             boxSize="full"
             bg="header"
-            position="fixed"
             top={0}
             zIndex={1000}
             h="auto"
@@ -71,8 +69,10 @@ function Navbar() {
                                         fontWeight="normal"
                                         color="headerText"
                                         _hover={{
-                                            bg: "gray.50",
-                                            color: "brand.blue",
+                                            bg: "none",
+                                        }}
+                                        _focus={{
+                                            bg: "none",
                                         }}
                                         textAlign="start"
                                     >
@@ -89,8 +89,10 @@ function Navbar() {
                                         fontWeight="normal"
                                         color="headerText"
                                         _hover={{
-                                            bg: "gray.50",
-                                            color: "brand.blue",
+                                            bg: "none",
+                                        }}
+                                        _focus={{
+                                            bg: "none",
                                         }}
                                         textAlign="start"
                                     >
@@ -107,8 +109,10 @@ function Navbar() {
                                         fontWeight="normal"
                                         color="headerText"
                                         _hover={{
-                                            bg: "gray.50",
-                                            color: "brand.blue",
+                                            bg: "none",
+                                        }}
+                                        _focus={{
+                                            bg: "none",
                                         }}
                                         textAlign="start"
                                     >
@@ -139,8 +143,10 @@ function Navbar() {
                                         fontWeight="normal"
                                         color="headerText"
                                         _hover={{
-                                            bg: "gray.50",
-                                            color: "brand.blue",
+                                            bg: "none",
+                                        }}
+                                        _focus={{
+                                            bg: "none",
                                         }}
                                         textAlign="start"
                                     >
@@ -155,8 +161,10 @@ function Navbar() {
                                     fontSize="lg"
                                     color="headerText"
                                     _hover={{
-                                        bg: "gray.50",
-                                        color: "brand.blue",
+                                        bg: "none",
+                                    }}
+                                    _focus={{
+                                        bg: "none",
                                     }}
                                 >
                                     News
@@ -171,8 +179,10 @@ function Navbar() {
                                         fontWeight="normal"
                                         color="headerText"
                                         _hover={{
-                                            bg: "gray.50",
-                                            color: "brand.blue",
+                                            bg: "none",
+                                        }}
+                                        _focus={{
+                                            bg: "none",
                                         }}
                                         textAlign="start"
                                     >
@@ -182,8 +192,8 @@ function Navbar() {
                             </Link>
                         </ButtonGroup>
                     </Box>
-                    <Flex direction="row">
-                        <Box display="flex" color="white" gap={2} >
+                    <Flex direction="row" alignItems="center">
+                        <Box display="flex" color="white" gap={2} alignItems="center">
                             <IconButton
                                 variant="outline"
                                 aria-label="Call Sage"
@@ -195,7 +205,7 @@ function Navbar() {
                             <Text color="white" alignSelf="center"mr="1rem">
                                 Notifications
                             </Text>
-                            <Divider orientation="vertical" />
+                            <Divider orientation="vertical" h="15px" />
                             <NavbarProfile/>
                            </Box>
                     </Flex>
