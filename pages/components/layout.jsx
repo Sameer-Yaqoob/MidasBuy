@@ -6,8 +6,11 @@ import theme from "./theme";
 function Layout({ children }) {
     return (
             <Box w="100%">
+                <Box>
                 <NavBar />
-                <Box >
+                </Box>
+                
+                <Box>
                 {children}
                 </Box>
                 <Footer />

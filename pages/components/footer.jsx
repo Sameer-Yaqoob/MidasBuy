@@ -161,6 +161,7 @@ const Footer = () => {
                     borderBottom= "1px solid hsla(0,0%,100%,.1)"
                     paddingBottom= "23px"
                     marginBottom="23px"
+					
                 >
 						<Box w="40%">
                         <Heading as="h3" size="sm" color="white" mb="24px">Follow us on</Heading>{" "}
@@ -248,8 +249,8 @@ const Footer = () => {
 						<Link ><Text color="var(--font-color-5,hsla(0,0%,100%,.4))" fontSize="12px" lineHeight="1" borderRight="1px solid var(--font-color-5,hsla(0,0%,100%,.4))"  pr="10px">Cookies Preference</Text></Link>
 						<Link ><Text color="var(--font-color-5,hsla(0,0%,100%,.4))" fontSize="12px" lineHeight="1" borderRight="1px solid var(--font-color-5,hsla(0,0%,100%,.4))"  pr="10px">Terms of Service</Text></Link>
 						<Link ><Text color="var(--font-color-5,hsla(0,0%,100%,.4))" fontSize="12px" lineHeight="1" borderRight="1px solid var(--font-color-5,hsla(0,0%,100%,.4))"  pr="10px">Privacy Policy</Text></Link>
-						<Link ><Text color="var(--font-color-5,hsla(0,0%,100%,.4))" fontSize="12px" lineHeight="1" borderRight="1px solid var(--font-color-5,hsla(0,0%,100%,.4))"  pr="10px">Cookie Policy</Text></Link>
-						<Text fontSize="12px" color="var(--font-color-5,hsla(0,0%,100%,.4))" lineHeight="24px">COPYRIGHT © HIGH MORALE DEVELOPMENTS LTD. ALL RIGHTSRESERVED.</Text>
+						<Link ><Text color="var(--font-color-5,hsla(0,0%,100%,.4))" fontSize="12px" lineHeight="1"   pr="10px">Cookie Policy</Text></Link>
+						<Text ml="50px" fontSize="12px" color="var(--font-color-5,hsla(0,0%,100%,.4))" lineHeight="24px">COPYRIGHT © HIGH MORALE DEVELOPMENTS LTD. ALL RIGHTSRESERVED.</Text>
 			</Flex>
             </Container>
 		</Box>
