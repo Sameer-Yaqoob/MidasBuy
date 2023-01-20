@@ -112,15 +112,18 @@ const DetailPageHeader = ()=>{
 							height="80px"
 							bottom={0}
 							display="flex"
+                            background={pathname.includes('promotions')&&"url(/images/bg-yellow.png) no-repeat 50%"}
+							backgroundSize="100px 80px"
 							alignItems="center"
 							_hover={{
 								textDecoration: "none",
 							}}
+							href='/pubg-promotions'
 						>
 							<Text
 								fontSize="20px"
 								fontWeight="bold"
-								color="text.gray"
+								color={pathname.includes('promotions') ? "#ffe500": "text.gray"}
 								letterSpacing="1px"
 								textShadow="0 2px 4px rgb(0 0 0 / 20%)"
 								lineHeight="68px"

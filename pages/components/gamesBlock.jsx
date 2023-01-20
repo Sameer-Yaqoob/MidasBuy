@@ -8,7 +8,7 @@ const GameBlock = () => {
     return (
         <Box w="100%" mt="2rem" mb="2rem">
             <Container maxW="container.xl">
-                <Flex direction="row" justify="space-between" mb="24px">
+                <Flex direction="row" justify="space-between" mb="24px" flexWrap="wrap">
                     <Heading as="h3" size="sm" color="headerText" fontSize="xl">
                         Popular Games
                     </Heading>

@@ -72,7 +72,8 @@ function Navbar() {
 										variant="ghost"
 										fontSize="lg"
 										fontWeight="normal"
-										color="headerText"
+										color={pathname =='/' ? '#fff' : 'text.gray'}
+										textShadow={pathname =='/' && '1px 1px 2px #fff'}
 										_hover={{
 											bg: "none",
 										}}
@@ -92,7 +93,8 @@ function Navbar() {
 										variant="ghost"
 										fontSize="lg"
 										fontWeight="normal"
-										color="headerText"
+										color={pathname.includes('news')? '#fff' : 'text.gray'}
+										textShadow={pathname.includes('news') && '1px 1px 2px #fff'}
 										_hover={{
 											bg: "none",
 										}}
@@ -146,9 +148,12 @@ function Navbar() {
 										variant="ghost"
 										fontSize="lg"
 										fontWeight="normal"
-										color="headerText"
+										color={pathname =='/' ? '#fff' : 'text.gray'}
+										textShadow={pathname =='/' && '1px 1px 2px #fff'}
 										_hover={{
 											bg: "none",
+											color:'#fff',
+											textShadow:'1px 1px 2px #fff'
 										}}
 										_focus={{
 											bg: "none",
@@ -164,9 +169,12 @@ function Navbar() {
 									variant="ghost"
 									fontWeight="normal"
 									fontSize="lg"
-									color="headerText"
+									color={pathname.includes('news')? '#fff' : 'text.gray'}
+									textShadow={pathname.includes('news') && '1px 1px 2px #fff'}
 									_hover={{
 										bg: "none",
+										color:'#fff',
+										textShadow:'1px 1px 2px #fff'
 									}}
 									_focus={{
 										bg: "none",
@@ -182,9 +190,12 @@ function Navbar() {
 										variant="ghost"
 										fontSize="lg"
 										fontWeight="normal"
-										color="headerText"
+										color={pathname.includes('help')? '#fff' : 'text.gray'}
+									    textShadow={pathname.includes('help') && '1px 1px 2px #fff'}
 										_hover={{
 											bg: "none",
+											color:'#fff',
+										    textShadow:'1px 1px 2px #fff'
 										}}
 										_focus={{
 											bg: "none",

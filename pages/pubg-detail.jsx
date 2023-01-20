@@ -90,7 +90,6 @@ export default function PubgDetail() {
 											src="/images/game-download.png"
 											width="58px"
 											height="58px"
-											position="absolute"
 											marginTop="0"
 										/>
 									</Link>
@@ -168,6 +167,7 @@ export default function PubgDetail() {
 								bgPosition="cover"
 								bgRepeat="no-repeat"
 							>
+								<Link href="/pubg-redeem">
 								<Box
 									display="flex"
 									justifyContent="space-between"
@@ -198,6 +198,7 @@ export default function PubgDetail() {
 										mt="-25px"
 									/>
 								</Box>
+								</Link>
 							</GridItem>
                             <GridItem
 								border="2px solid #48a3b6"
@@ -210,6 +211,7 @@ export default function PubgDetail() {
 								bgPosition="cover"
 								bgRepeat="no-repeat"
 							>
+								<Link href="/pubg-shop">
 								<Box
 									display="flex"
 									justifyContent="space-between"
@@ -240,6 +242,7 @@ export default function PubgDetail() {
 										mt="-25px"
 									/>
 								</Box>
+								</Link>
 							</GridItem>
                             <GridItem
 								border="2px solid #4cafc0"
@@ -252,6 +255,7 @@ export default function PubgDetail() {
 								bgPosition="cover"
 								bgRepeat="no-repeat"
 							>
+								<Link href="/pubg-promotions">
 								<Box
 									display="flex"
 									justifyContent="space-between"
@@ -282,6 +286,7 @@ export default function PubgDetail() {
 										mt="-25px"
 									/>
 								</Box>
+								</Link>
 							</GridItem>
 						</Grid>
                     <Box mb="84px">

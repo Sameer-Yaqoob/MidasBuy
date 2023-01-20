@@ -13,18 +13,21 @@ const NewsFilterBlock = ()=> {
                     LATEST NEWS
                 </Heading> 
             </Flex>
-            <Grid  gap={3} w={{lg:"50%",sm:"100%"}} templateColumns={{ lg:"repeat(2, 1fr)", md: "repeat(2, 1fr)", sm: "repeat(2, 1fr)" }} position="relative">
-                    <GridItem w="100%"
-                        h= "72px"
-                        bg= "var(--bg-color-7,#1b234d)"
+            <Flex  gap={10} w={{lg:"70%",sm:"100%", md:'100%'}} justifyContent={{lg:'flex-start', md:'flex-start', sm:'center'}} position="relative" flexWrap="wrap">
+                    <Box w="280px"
+                        h= "120px"
+                        // bg= "var(--bg-color-7,#1b234d)"
                         borderRadius="4px"
+                        bg="url(/images/bg-active.png)"
+                        bgRepeat="no-repeat"
+                        bgSize="cover"
                         padding= "12px 24px"
-                        boxSizing="border-box"
-                        display="inline-block"
+                        // boxSizing="border-box"
+                        display="flex"
                         cursor="pointer"
                         position="relative"
                     >
-                        <Box display="flex" alignItems="center">
+                        <Box display="flex" alignItems="center" ml="16px">
                            <Image src="/images/all-apps-icon.png" borderRadius="6px" mr="10px" width="48px" height="48px"/>
                            <Text fontSize="14px" color="var(--font-color-6,hsla(0,0%,100%,.6))"
                                letterSpacing= "0"
@@ -38,19 +41,19 @@ const NewsFilterBlock = ()=> {
                            >All</Text>
                 
                         </Box>
-                    </GridItem>
-                    <GridItem w="100%"
-                        h= "72px"
+                    </Box>
+                    <Box w="280px"
+                        h= "120px"
                         bg= "var(--bg-color-7,#1b234d)"
                         borderRadius="4px"
                         padding= "12px 24px"
                         fontWeight="bold"
                         boxSizing="border-box"
-                        display="inline-block"
+                        display="flex"
                         cursor="pointer"
                         position="relative"
                     >
-                        <Box display="flex" alignItems="center">
+                        <Box display="flex" alignItems="center" ml="16px">
                            <Image src="/images/bubgmobil-icon.png" borderRadius="6px" mr="10px" width="48px" height="48px"/>
                            <Text fontSize="14px" color="var(--font-color-6,hsla(0,0%,100%,.6))"
                                letterSpacing= "0"
@@ -63,8 +66,8 @@ const NewsFilterBlock = ()=> {
                            >PUBG MOBILE</Text>
                 
                         </Box>
-                    </GridItem>
-            </Grid>
+                    </Box>
+            </Flex>
         </Container>
     </Box>    
     )

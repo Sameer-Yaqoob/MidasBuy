@@ -157,13 +157,19 @@ const Footer = () => {
 				<Box
                     w="100%"
                     display="flex"
-                    alignItems="center"
+                    alignItems={{lg:'center', md:'flex-start',sm:'flex-start'}}
                     borderBottom= "1px solid hsla(0,0%,100%,.1)"
                     paddingBottom= "23px"
                     marginBottom="23px"
+					flexWrap="wrap"
+				     flexDirection={{lg:'row',md:'column',sm:'column'}}
+					
 					
                 >
-						<Box w="40%">
+						<Box w={{lg:"40%", md:'100%', sm:'100%'}}
+						borderBottom= {{lg:'none',md:"1px solid hsla(0,0%,100%,.1)", sm:'1px solid hsla(0,0%,100%,.1)'}}
+						pb="10px"
+						>
                         <Heading as="h3" size="sm" color="white" mb="24px">Follow us on</Heading>{" "}
 							<Box display="flex" gap="16px">
 								<Image
@@ -210,14 +216,17 @@ const Footer = () => {
 								/>
 							</Box>
 						</Box>
-                        <Box w="60%"
+                        <Box w={{lg:"60%", md:'100%', sm:'100%'}}
+						pt="10px"
                         display="flex"
-                        justifyContent="space-between"
-                        alignItems="center"
+						gap="10px"
+                        justifyContent={{lg:"space-between", }}
+                        alignItems={{lg:"center", sm:'flex-start', md:'flex-start'}}
+						flexDirection={{lg:'row',md:'column',sm:'column'}}
                         >
 							<Text fontSize="12px" color="var(--font-color-5,hsla(0,0%,100%,.4))">
 								{" "}
-								For customer service, please contact us via email<br/> help@midasbuy.com or Facebook inbox.
+								For customer service, please contact us via email help@midasbuy.com or Facebook inbox.
 							</Text>
                     <Box mr="15px">
                      <Link 
@@ -244,13 +253,13 @@ const Footer = () => {
 					
 				</Box>
 			</Box>{" "}
-			<Flex gap="10px" alignItems="center">
+			<Flex gap="10px" alignItems="center" flexWrap="wrap">
 					
 						<Link ><Text color="var(--font-color-5,hsla(0,0%,100%,.4))" fontSize="12px" lineHeight="1" borderRight="1px solid var(--font-color-5,hsla(0,0%,100%,.4))"  pr="10px">Cookies Preference</Text></Link>
 						<Link ><Text color="var(--font-color-5,hsla(0,0%,100%,.4))" fontSize="12px" lineHeight="1" borderRight="1px solid var(--font-color-5,hsla(0,0%,100%,.4))"  pr="10px">Terms of Service</Text></Link>
 						<Link ><Text color="var(--font-color-5,hsla(0,0%,100%,.4))" fontSize="12px" lineHeight="1" borderRight="1px solid var(--font-color-5,hsla(0,0%,100%,.4))"  pr="10px">Privacy Policy</Text></Link>
 						<Link ><Text color="var(--font-color-5,hsla(0,0%,100%,.4))" fontSize="12px" lineHeight="1"   pr="10px">Cookie Policy</Text></Link>
-						<Text ml="50px" fontSize="12px" color="var(--font-color-5,hsla(0,0%,100%,.4))" lineHeight="24px">COPYRIGHT © HIGH MORALE DEVELOPMENTS LTD. ALL RIGHTSRESERVED.</Text>
+						<Text ml={{lg:"50px", md:"none", sm:'none'}} fontSize="12px" color="var(--font-color-5,hsla(0,0%,100%,.4))" lineHeight="24px">COPYRIGHT © HIGH MORALE DEVELOPMENTS LTD. ALL RIGHTSRESERVED.</Text>
 			</Flex>
             </Container>
 		</Box>
