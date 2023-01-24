@@ -23,8 +23,8 @@ export default function PubgRedeem() {
 		<Layout>
 			<DetailPageHeader/>
 			<Container maxW="container.md">
-				<Flex mt="70px">
-					<Box w="50%">
+				<Flex mt="70px" flexDirection={{lg:"row", md:"row", sm:"column-reverse"}} gap={{sm:"20px"}}>
+					<Box w={{lg:"50%", md:"50%", sm:"100%"}}>
 						<Text
 							color="text.gray"
 							fontSize="12px"
@@ -34,7 +34,7 @@ export default function PubgRedeem() {
 							redemption rewards.
 						</Text>
 					</Box>
-					<Box w="50%">
+					<Box w={{lg:"50%", md:"50%", sm:"100%"}}>
 						<Button colorScheme="messenger" w="100%">
 							Sign in/Sign up
 						</Button>

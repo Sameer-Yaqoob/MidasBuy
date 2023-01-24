@@ -14,11 +14,39 @@ const HotEventCarousel = ({ data }) => {
 		slidesToShow: 1,
 		arrows: false,
 		afterChange: (current,next) =>
-    setEvent(data[current]),
+        setEvent(data[current]),
+		responsive: [
+			{
+			  breakpoint: 1024,
+			  settings: {
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				infinite: true,
+				dots: true
+			  }
+			},
+			{
+			  breakpoint: 993,
+			  settings: {
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				initialSlide: 1,
+				dots: false
+			  }
+			},
+			{
+			  breakpoint: 480,
+			  settings: {
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				dots: false
+			  }
+			}
+		  ]
 	};
 	return (
 		<Box w="100%">
-			<Box
+			<Box 
 				sx={{
 					".slick-dots": {
 						transform: "translateY(-4em)",
@@ -37,14 +65,12 @@ const HotEventCarousel = ({ data }) => {
 							background: "headerText",
 						},
 					},
+					
 				}}
 			>
 				<Flex h="150px">
-					<Box w="50%" h="100%">
+					<Box  w={{lg:"50%", md:"100%", sm:"100%"}} h="100%">
 						<Slider {...slickSettings}>
-							{/* <Slide image="/images/hot-event-1.png" text="Follow Midasbuy TikTok to win $9.99 UC!"/> 
-          <Slide image="/images/hot-event-2.png" text="Buy Monthly Pass directly on Midasbuy!"/>
-          <Slide image="/images/hot-event-3.png" text="Buy Monthly Pass directly on Midasbuy!"/> */}
 							{data.map((slide) => {
 								return (
 									<React.Fragment>
@@ -60,10 +86,10 @@ const HotEventCarousel = ({ data }) => {
 						</Slider>
 					</Box>
 					<Box
-						display="flex"
+						display={{lg:"flex",md:"none",sm:"none"}}
 						flexDirection="column"
 						justifyContent="space-between"
-						w="50%"
+						w={{lg:"50%", md:"100%", sm:"100%"}}
 						bg="var(--bg-color-8,#1d2657)"
 						h="100%"
 					>

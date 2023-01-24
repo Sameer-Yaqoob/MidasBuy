@@ -66,7 +66,7 @@ export default function PubgBuy() {
 					<Flex
 						bgImage="url(/images/bg-purchase-header.webp)"
 						cursor="pointer"
-						h="60px"
+						minH="60px"
 						bgColor="var(--bg-color-3,#141b3d)"
 						bgRepeat="no-repeat"
 						// boxSize="border-box"
@@ -74,6 +74,8 @@ export default function PubgBuy() {
 						mb="50px"
 						borderRadius="4px"
 						alignItems="center"
+						flexWrap="wrap"
+						position="relative"
 					>
 						<Image
 							position="absolute"
@@ -86,9 +88,9 @@ export default function PubgBuy() {
 							w="78px"
 							h="78px"
 						/>
+						<Flex ml="100px" flexWrap="wrap">
 						<Text
-							// flexShrink="0"
-							ml="200px"
+							
 							mr="16px"
 							fontSize="14px"
 							fontWeight="bold"
@@ -120,6 +122,9 @@ export default function PubgBuy() {
 						>
 							<Text lineHeight="16px">Go</Text>
 						</Box>
+						</Flex>
+
+					
 					</Flex>
 					<Flex alignItems="center" mb="20px">
 						<Heading as="h3" size="sm" color="white" mr="14px">
@@ -131,7 +136,7 @@ export default function PubgBuy() {
 						</Box>
 					</Flex>
 					`{" "}
-					<Stack direction="row" spacing={0} w="50%" mb="70px">
+					<Stack direction="row" spacing={0} w={{lg:"50%", md:"100%", sm:"100%"}} mb="70px">
 						<InputGroup borderRadius="none" alignSelf="center">
 							<Input
 								type="tel"
@@ -168,8 +173,8 @@ export default function PubgBuy() {
 					<Heading as="h3" size="sm" color="white" mb="20px">
 						Payment Method
 					</Heading>
-					<Flex gap="16px" mb="70px">
-						<Box w="50%" cursor="pointer" position="relative">
+					<Flex gap="16px" mb="70px" flexDirection={{lg:"row", md:"column", sm:"column"}}>
+						<Box w={{lg:"50%", md:"100%", sm:"100%"}} cursor="pointer" position="relative">
 							<Box
 								w="100%"
 								h="80px"
@@ -250,7 +255,7 @@ export default function PubgBuy() {
 									h="80px"
 									pl="35px"
 									cursor="pointer"
-									position="absolute"
+									// position="absolute"
 									w="100%"
 								>
 									<Image
@@ -292,7 +297,7 @@ export default function PubgBuy() {
 							)}
 						</Box>
 						<Box
-							w="50%"
+							w={{lg:"50%", md:"100%", sm:"100%"}}
 							h="80px"
 							bg="var(--bg-color-5,#192045)"
 							position="relative"
@@ -336,7 +341,7 @@ export default function PubgBuy() {
 						Select Product
 					</Heading>
 					<Flex
-						h="38px"
+						minH="38px"
 						gap="16px"
 						lineHeight="38px"
 						backgroundImage="linear-gradient(180deg,rgba(201,140,101,.15),rgba(176,103,69,.15))"
@@ -353,13 +358,15 @@ export default function PubgBuy() {
 							ml="16px"
 							h="19px"
 						/>
-						<Text>
-							You can become VIP immediatly after finishing this
-							payment.
+						<Flex flexWrap="wrap">
+						<Text noOfLines={1}>
+							You can become VIP immediatly after finishing this payment.
 						</Text>
 						<Text textDecoration="underline">
 							Win VIP Lucky Draw Prizes
 						</Text>
+						</Flex>
+						
 					</Flex>
 					<Grid
 						gap={3}
@@ -367,7 +374,7 @@ export default function PubgBuy() {
 						templateColumns={{
 							lg: "repeat(4, 1fr)",
 							md: "repeat(3, 1fr)",
-							sm: "repeat(2, 1fr)",
+							sm: "repeat(1, 1fr)",
 						}}
 						position="relative"
 						mb="30px"

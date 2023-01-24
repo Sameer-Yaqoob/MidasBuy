@@ -4,15 +4,15 @@ import { Image } from "@chakra-ui/react";
 import { FaFacebook } from "react-icons/fa";
 const HotEventCard = ({ image, text, heading }) => {
 	return (
-		<Flex h="150px">
-			<Box w="50%">
+		<Flex h="150px" flexWrap="wrap">
+			<Box w={{lg:"50%", md:"100%", sm:"100%"}}>
 				<Image src={image} alt="Dan Abramov" w="100%" h="100%" />
 			</Box>
 			<Box
 				display="flex"
 				flexDirection="column"
 				justifyContent="space-between"
-				w="50%"
+				w={{lg:"50%", md:"100%", sm:"100%"}}
 				bg="var(--bg-color-8,#1d2657)"
 				h="100%"
 			>

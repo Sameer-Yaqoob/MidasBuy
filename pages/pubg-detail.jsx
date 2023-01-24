@@ -105,7 +105,7 @@ export default function PubgDetail() {
 						<Grid
 							margin="24px auto 44px"
 							color="transparent"
-							templateColumns="repeat(4, 1fr)"
+							templateColumns={{lg:"repeat(4, 1fr)",  md: "repeat(3, 1fr)", sm: "repeat(2, 1fr)"}}
 							alignItems="center"
 							gap={6}
 							bg="url(/images/bg-shades.png)"

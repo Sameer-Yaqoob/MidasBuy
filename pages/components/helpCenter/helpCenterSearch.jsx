@@ -32,7 +32,7 @@ const HelpCenterSearch = () => {
                     textColor="headerText"
                     borderRadius="none"
                     h="38px"
-                    w="50%"
+                    w={{lg:"50%", md:"100%", sm:"100%"}}
                 />
             </InputGroup>
         </Box>

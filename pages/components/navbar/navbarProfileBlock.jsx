@@ -9,7 +9,8 @@ import {
     Button,
     useDisclosure,
     Box,
-    Text
+    Text,
+    Icon
   } from '@chakra-ui/react'
   import { ChevronDownIcon } from "@chakra-ui/icons";
   import Login from "../login";
@@ -18,6 +19,7 @@ import {
   import {getUserState } from '../../../data/redux/selecters';
   import { getUserRequest, logOutRequest } from '../../../data/redux/actions';
   import {isEmpty} from 'lodash';
+  import {HiUserAdd} from 'react-icons/hi'
 
 
 const NavbarProfile = ()=> {
@@ -69,9 +71,10 @@ const NavbarProfile = ()=> {
             _hover={{bg:"var(--bg-color-8,#1d2657)"  }}
             _expanded={{ bg:"var(--bg-color-8,#1d2657)"}}
             _focus={{ bg:"none"}}
-            rightIcon={<ChevronDownIcon />}
+            rightIcon={<ChevronDownIcon/>}
         >
-            {user.email?user.email:"My account"}
+            <Icon  boxSize={7} as={HiUserAdd} display={{sm:'block', lg:'none', md:'none'}} />
+           <Text display={{sm:'none', lg:'block', md:'block'}}>{user.email?user.email:"My account"}</Text> 
         </MenuButton>
         <MenuList bg="var(--bg-color-8,#1d2657)" borderColor="var(--bg-color-8,#1d2657)" borderRadius="none" >
             <MenuGroup  bg="base.2" border="none" borderColor="none">

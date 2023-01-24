@@ -34,7 +34,7 @@ const DetailPageHeader = ()=>{
 				zIndex="100"
 			>
 				<Container maxW="container.xl">
-					<Flex gap="40px">
+					<Flex gap={{lg:"30px", md:"10px", sm:"10px"}}>
 						<Box>
 							{" "}
 							<Link
@@ -50,7 +50,7 @@ const DetailPageHeader = ()=>{
 								href="/pubg-buy"
 							>
 								<Text
-									fontSize="20px"
+									fontSize={{lg:"20px", md:"14px", sm:"14px"}}
 									fontWeight="bold"
 									color={pathname.includes('buy') ? "#ffe500": "text.gray"}
 									letterSpacing="1px"
@@ -75,7 +75,7 @@ const DetailPageHeader = ()=>{
 							href="/pubg-redeem"
 						>
 							<Text
-								fontSize="20px"
+								fontSize={{lg:"20px", md:"14px", sm:"14px"}}
 								fontWeight="bold"
 								color={pathname.includes('redeem') ? "#ffe500": "text.gray"}
 								letterSpacing="1px"
@@ -98,7 +98,7 @@ const DetailPageHeader = ()=>{
                             href="/pubg-shop"
 						>
 							<Text
-							fontSize="20px"
+							fontSize={{lg:"20px", md:"14px", sm:"14px"}}
                             fontWeight="bold"
                             color={pathname.includes('shop') ? "#ffe500": "text.gray"}
                             letterSpacing="1px"
@@ -121,7 +121,7 @@ const DetailPageHeader = ()=>{
 							href='/pubg-promotions'
 						>
 							<Text
-								fontSize="20px"
+								fontSize={{lg:"20px", md:"14px", sm:"14px"}}
 								fontWeight="bold"
 								color={pathname.includes('promotions') ? "#ffe500": "text.gray"}
 								letterSpacing="1px"

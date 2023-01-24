@@ -20,6 +20,7 @@ import DrawerComp from "./drawer";
 import { MdNotificationImportant } from "react-icons/md";
 import NavbarProfile from "./navbarProfileBlock";
 import { useRouter } from "next/router";
+
 function Navbar() {
 	const { isOpen, onOpen, onClose } = useDisclosure();
 	const btnRef = React.useRef();
@@ -44,7 +45,7 @@ function Navbar() {
 					alignItems="center"
 					as="nav"
 					justify="space-between"
-					wrap="wrap"
+					wrap="no-wrap"
 				>
 					<Button
 						ref={btnRef}
@@ -114,9 +115,12 @@ function Navbar() {
 										variant="ghost"
 										fontSize="lg"
 										fontWeight="normal"
-										color="headerText"
+										color={pathname.includes('help')? '#fff' : 'text.gray'}
+									    textShadow={pathname.includes('help') && '1px 1px 2px #fff'}
 										_hover={{
 											bg: "none",
+											color:'#fff',
+										    textShadow:'1px 1px 2px #fff'
 										}}
 										_focus={{
 											bg: "none",
@@ -223,7 +227,7 @@ function Navbar() {
 								border="none"
 								icon={<MdNotificationImportant />}
 							></IconButton>
-							<Text color="white" alignSelf="center" mr="1rem">
+							<Text color="white" alignSelf="center" mr="1rem" display={{sm:'none', lg:'block', md:'block'}}>
 								Notifications
 							</Text>
 							<Divider orientation="vertical" h="15px" />
