@@ -23,6 +23,9 @@ import { MdInfoOutline } from "react-icons/md";
 import ProductCard from "./components/ui/productCard";
 import ProductPriceTooltip from "./components/ui/productPriceTooltip";
 import DetailPageHeader from "./components/ui/detailPageHeader";
+import { useSelector, useDispatch } from "react-redux";
+import { getProductState } from "../data/redux/selecters";
+import { getProductRequest } from "../data/redux/actions";
 
 const products = [
     { id: "1", image: "/images/uc-main.png", price: 0.99 },
@@ -36,7 +39,8 @@ export default function PubgBuy() {
 	const [paymentHover, setPaymentHover] = useState(false);
 	const [clientWindowHeight, setClientWindowHeight] = useState();
 	const [active, setActive] = useState("1");
-    const [activePrice, setActivePrice] = useState(products[0].price);
+	const {products} = useSelector(getProductState)
+    const [activePrice, setActivePrice] = useState(products?.length && products[0].price);
     const [activePaymentMethod, setActivePaymentMethod] = useState("credit")
 	const handleActive = (id,price) => {
 		setActive(id);
@@ -58,6 +62,13 @@ export default function PubgBuy() {
 	const onMouseLeaveHandler = () => {
 		setPaymentHover(false);
 	};
+
+		const dispatch = useDispatch();
+		
+		console.log('dddd', products)
+		useEffect(()=> {
+			dispatch(getProductRequest());
+			},[])
 	return (
 		<Layout>
 		<DetailPageHeader/>
@@ -260,38 +271,38 @@ export default function PubgBuy() {
 								>
 									<Image
 										src="/images/visa-icon.png"
-										w="50px"
-										h="30px"
+										w={{lg:"50px", md:"30px", sm:"30px"}}
+										h={{lg:"30px", md:"20px", sm:"20px"}}
 									/>
 									<Image
 										src="/images/master-icon.png"
-										w="50px"
-										h="30px"
+										w={{lg:"50px", md:"30px", sm:"30px"}}
+										h={{lg:"30px", md:"20px", sm:"20px"}}
 									/>
 									<Image
 										src="/images/amex-icon.png"
-										w="50px"
-										h="30px"
+										w={{lg:"50px", md:"30px", sm:"30px"}}
+										h={{lg:"30px", md:"20px", sm:"20px"}}
 									/>
 									<Image
 										src="/images/union-icon.png"
-										w="50px"
-										h="30px"
+										w={{lg:"50px", md:"30px", sm:"30px"}}
+										h={{lg:"30px", md:"20px", sm:"20px"}}
 									/>
 									<Image
 										src="/images/diner-icon.png"
-										w="50px"
-										h="30px"
+										w={{lg:"50px", md:"30px", sm:"30px"}}
+										h={{lg:"30px", md:"20px", sm:"20px"}}
 									/>
 									<Image
 										src="/images/discover-icon.png"
-										w="50px"
-										h="30px"
+										w={{lg:"50px", md:"30px", sm:"30px"}}
+										h={{lg:"30px", md:"20px", sm:"20px"}}
 									/>
 									<Image
 										src="/images/jcb-icon.png"
-										w="50px"
-										h="30px"
+										w={{lg:"50px", md:"30px", sm:"30px"}}
+										h={{lg:"30px", md:"20px", sm:"20px"}}
 									/>
 								</Box>
 							)}

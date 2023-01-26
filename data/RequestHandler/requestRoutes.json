@@ -29,5 +29,19 @@
     "method": "POST",
     "route": "/core/logout/",
     "isProtected": true
+  },
+  "getGames": {
+    "method": "GET",
+     "route": "/core/games/"
+  },
+  "getPromotions": {
+    "method": "GET",
+    "route": "/core/promotion/"
+  },
+  "getProduct": {
+    "method": "GET",
+    "route": "/core/product/"
   }
+
+
 }

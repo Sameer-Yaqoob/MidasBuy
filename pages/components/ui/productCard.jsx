@@ -32,7 +32,7 @@ const ProductCard = ({product, active, handleActive})=> {
           position="absolute"
           left={0}
           top={0}
-          src="/images/corner-tick.svg"
+          src='/images/corner-tick.svg'
           display={active == product.id ? 'block': 'none'}
         />
         <Flex h="24px" justifyContent="center" alignItems="center">
@@ -45,7 +45,7 @@ const ProductCard = ({product, active, handleActive})=> {
             pl="5px"
             fontWeight="bold"
           >
-            7
+            {product.price}
           </Text>
           <Text
             fontSize="24px"
@@ -55,7 +55,7 @@ const ProductCard = ({product, active, handleActive})=> {
             pl="5px"
             fontWeight="bold"
           >
-            +7
+           { '+' + product.bonus}
           </Text>
         </Flex>
 
@@ -69,7 +69,7 @@ const ProductCard = ({product, active, handleActive})=> {
         >
           <Image
             position="absolute"
-            src={product.image}
+            src={`http://172.20.17.206:3000/${product.image}`}
             w="70%"
             maxW="100%"
             zIndex="100"
@@ -82,7 +82,7 @@ const ProductCard = ({product, active, handleActive})=> {
             display={active == product.id ? 'block': 'none'}
           />
         </Flex>
-        <Flex h="24px" justifyContent="center" alignItems="center">
+        { product.product_type == 'One time' && <Flex h="24px" justifyContent="center" alignItems="center">
           <Image src="/images/yellow-star.png" w="12px" h="12px" />
         
           <Text
@@ -94,7 +94,7 @@ const ProductCard = ({product, active, handleActive})=> {
           >
             One Purchase Only
           </Text>
-        </Flex>
+        </Flex>}
         <Flex alignItems="center" bg="var(--bg-color-9,#1e2d5f);" justifyContent="center" w="100%" h="42px">
             <Text
             ontSize="20px"

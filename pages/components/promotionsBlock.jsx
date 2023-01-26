@@ -1,16 +1,19 @@
-import { Flex, Box, Heading, IconButton, Container,Text } from "@chakra-ui/react";
-import React from "react";
+import { Flex, Box, Heading, Container,Text } from "@chakra-ui/react";
+import React, {useEffect} from "react";
 import PromotionCard from "./ui/promotionCard";
-import { Grid, GridItem } from "@chakra-ui/react";
-const homePromotions = [
-    {id:1,startDate:'2014-11-14T14:05:09Z',endDate:'2014-11-14T14:05:09Z',title:'Follow Midasbuy on Twitter to win $4.99 UC!',image:'/images/promotion-2.jpg'},
-    {id:2,startDate:'2014-11-14T14:05:09Z',endDate:'2014-11-14T14:05:09Z',title:'Follow Midasbuy on Pubg Mobile to win $4.99 UC!',image:'/images/promotion-1.png'},
-    {id:3,startDate:'2014-11-14T14:05:09Z',endDate:'2014-11-14T14:05:09Z',title:'Follow Midasbuy on Instagram to win $4.99 UC!',image:'/images/promotion-3.jpg'},
-    {id:4,startDate:'2014-11-14T14:05:09Z',endDate:'2014-11-14T14:05:09Z',title:'Follow Midasbuy on Facebook to win $4.99 UC!',image:'/images/promotion-4.jpg'},
-    {id:5,startDate:'2014-11-14T14:05:09Z',endDate:'2014-11-14T14:05:09Z',title:'Follow Midasbuy on Tiktok to win $4.99 UC!',image:'/images/promotion-5.jpg'}
-]
+import { Grid  } from "@chakra-ui/react";
+import { useDispatch, useSelector } from "react-redux";
+import { getPromotionsState } from "../../data/redux/selecters";
+import { getPromotionsRequest } from "../../data/redux/actions";
+
 const PromotionBlock = () => {
-    return (
+    const dispatch = useDispatch();
+    const {promotions} = useSelector(getPromotionsState)
+    
+    useEffect(()=> {
+        dispatch(getPromotionsRequest());
+        },[])
+        return (
         <Box w="100%" mt="24px" mb="24px">
             <Container maxW="container.xl">
                 <Flex direction="row" justify="left" mb="24px">
@@ -19,7 +22,7 @@ const PromotionBlock = () => {
                     </Heading>
                 </Flex>
                 <Grid  gap={3} w="100%" templateColumns={{ lg:"repeat(3, 1fr)", md: "repeat(2, 1fr)", sm: "repeat(1, 1fr)" }} position="relative">
-                    {homePromotions.map((promo)=> {
+                    {promotions?.map((promo)=> {
                         return <PromotionCard key={promo.id} promotion={promo}/>
                     })}
                     

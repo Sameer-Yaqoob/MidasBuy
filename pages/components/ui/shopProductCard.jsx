@@ -19,7 +19,7 @@ import {
 const ShopProductCard = ({ type }) => {
 		if (type == "oneday") {
 			return (
-				<Link href="/" _hover={{ textDecoration: "none" }}>
+				<Link href="/" _hover={{ textDecoration: "none" }} w="100%">
 					<GridItem w="100%">
 						<Card maxW="sm" w="100%">
 							<CardBody
